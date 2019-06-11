@@ -35,7 +35,9 @@ public class MyView extends LinearLayout {
 
         button.setText("You got it");
 
-        button.setVisibility()
+        button.setVisibility(INVISIBLE);
+
+        addView(button);
 
 
     }
