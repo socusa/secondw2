@@ -31,6 +31,12 @@ public class MyView extends LinearLayout {
             addView(buttons[counter]);
         }
 
+        button = new Button(context);
+
+        button.setText("You got it");
+
+        button.setVisibility()
+
 
     }
 
