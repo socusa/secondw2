@@ -40,16 +40,25 @@ public class MyThread implements Runnable {
     @Override
     public void run() {
         while (keepGoing) {
-            int numberOfColors = (int)(10*Math.random());
+            int numberOfColors = 2 + (int)(10*Math.random());
 
             int[] colors = new int[numberOfColors];
 
             for (int counter=0;counter<colors.length;counter++)
                 colors[counter] = color();
 
-            GradientDrawable drawable = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP,colors);
+            final GradientDrawable drawable = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP,colors);
 
-            myView.setBackground(drawable);
+            if (myView != null) {
+                myView.post(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        myView.setBackground(drawable);
+                    }
+                });
+            }
+
 
             pause(10);
         }

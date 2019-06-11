@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         myThread = new MyThread();
 
-        setContentView(R.layout.activity_main);
+        setContentView(myView = new MyView(this));
     }
 
     protected void onDestroy() {
