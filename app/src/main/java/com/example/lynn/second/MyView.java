@@ -21,6 +21,12 @@ public class MyView extends LinearLayout {
             buttons[counter] = new Button(context);
 
             buttons[counter].setText(temp.substring(counter,counter+1));
+
+            buttons[counter].setTextSize(20);
+
+            buttons[counter].setOnClickListener(listener);
+
+            addView(buttons[counter]);
         }
 
 

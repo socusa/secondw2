@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     public static String getWord() {
         java.util.List<String> words = new ArrayList<>();
 
-        Cursor cursor = database.rawQuery("SELECT * FROM statearea;",new String[]{});
+        Cursor cursor = database.rawQuery("SELECT * FROM words;",new String[]{});
 
         cursor.moveToFirst();
 
