@@ -4,6 +4,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
@@ -13,6 +14,24 @@ public class MainActivity extends AppCompatActivity {
     public static MyView myView;
     public static MyListener listener = new MyListener();
     public static MyThread myThread;
+    public static String word;
+    public static Button[] buttons;
+
+    public static String scramble(String input) {
+        char[] characters = input.toCharArray();
+
+        for(int counter=0;counter<100;counter++) {
+            int position1 = (int)(characters.length*Math.random());
+
+            int position2 = (int)(characters.length*Math.random());
+
+            char temp = characters[position1];
+            characters[position1] = characters[position2];
+            characters[position2] = temp;
+        }
+
+        return(new String(characters));
+    }
 
     public static String getWord() {
         java.util.List<String> words = new ArrayList<>();
