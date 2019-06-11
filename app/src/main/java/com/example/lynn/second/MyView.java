@@ -13,6 +13,8 @@ public class MyView extends LinearLayout {
 
         word = getWord();
 
+        word = word.toUpperCase();
+
         String temp = scramble(word);
 
         buttons = new Button[word.length()];
