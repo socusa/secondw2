@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     public static Button[] buttons;
     public static Button first;
     public static Button button;
+    public static Button solve;
 
     public static String scramble(String input) {
         char[] characters = input.toCharArray();
